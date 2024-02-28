@@ -90,5 +90,11 @@ namespace EasyConvert.EasyConvert
                     txtValue.Focus();
                 }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ArrayTest frm = new ArrayTest();
+            frm.Show();
+        }
     }
 }
