@@ -72,11 +72,56 @@ namespace EasyConvert.EasyConvert
                 LimparTxt();
                 return;
             }
-            //string result = Med.DecToBin(Convert.ToInt32(txtValue.Text));
-            //string result = Med.BinToDec(txtValue.Text);
-            //string result = Med.OctaToBin(txtValue.Text);
-            string result = Med.BinToHex(txtValue.Text).ToUpper();
-            txtResult.Text = result;
+
+            string result = "";
+
+            string input = cmbIn.Text;
+            string output = cmbOut.Text;
+            //Check In
+            switch(input)
+            {
+                case "Decimal":
+                    result = Med.DecToBin(Convert.ToInt16(txtValue.Text));
+                    break;
+                case "Binário":
+                    result = Med.BinToDec(txtValue.Text).ToUpper();
+                    break;
+                case "Octal":
+                    result = Med.OctaToBin(txtValue.Text).ToUpper();
+                    break;
+                case "HexDecimal":
+                    result = Med.HexToBin(txtValue.Text).ToUpper();
+                    break;
+                default:
+                    MessageBox.Show("Por favor, selecione um dos tipo de entrada e saída válidos.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(input);
+                    LimparTxt();
+                    break;
+                    
+            }
+            switch (output)
+            {
+                case "Decimal":
+                    result = Med.BinToDec(txtValue.Text);
+                    txtResult.Text = result;
+                    break;
+                case "Binário":
+                    txtResult.Text = result;
+                    break;
+                case "Octal":
+                    result = Med.BinToOcta(txtValue.Text).ToUpper();
+                    txtResult.Text = result;
+                    break;
+                case "HexDecimal":
+                    result = Med.BinToHex(txtValue.Text).ToUpper();
+                    txtResult.Text = result;
+                    break;
+                default:
+                    MessageBox.Show("Por favor, selecione um dos tipos válidos.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LimparTxt();
+                    break;
+            }
+            //LimparTxt();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -90,6 +135,29 @@ namespace EasyConvert.EasyConvert
         {
             txtValue.Clear();
             txtValue.Focus();
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = SystemColors.ButtonFace;
+            button1.ForeColor = Color.Black;
+            button1.Width = 384;
+            button1.Height = 30;
+            button1.Location = new System.Drawing.Point(215, 198);
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = SystemColors.WindowFrame;
+            button1.ForeColor = Color.White;
+            button1.Width = 420;
+            button1.Height = 45;
+            button1.Location = new System.Drawing.Point(199, 186);
+        }
+
+        private void txtValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
