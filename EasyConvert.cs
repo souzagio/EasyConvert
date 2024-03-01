@@ -73,7 +73,8 @@ namespace EasyConvert.EasyConvert
                 return;
             }
             //string result = Med.DecToBin(Convert.ToInt32(txtValue.Text));
-            string result = Med.BinToDec(txtValue.Text);
+            //string result = Med.BinToDec(txtValue.Text);
+            string result = Med.OctaToBin(txtValue.Text);
             txtResult.Text = result;
         }
 
