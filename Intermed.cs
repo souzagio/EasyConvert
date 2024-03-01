@@ -136,9 +136,10 @@ namespace EasyConvert
                 {
                     novoArray[i] = '0';
                 }
-                //Copiar cNum no novo array
                 //Copy => (origem, índice da origem, destino, índice do destino, nº a serem copiados
+                //Não sabia copiar array ':D
                 Array.Copy(cNum, 0, novoArray, addZero, cNum.Length);
+                //Fazer com que cNum ocupe o mesmo espaço na memória que o novoArray
                 cNum = novoArray;
             }
             List<string> lOctal = new List<string>();
@@ -173,6 +174,129 @@ namespace EasyConvert
                 lNumber[0] = "0" + lNumber[0];
                 string item = string.Join("", lNumber);
                 string result = CheckOctal(item);
+                lOctal.Add(result);
+                lNumber.Clear();
+            }
+
+            string retorna = string.Join("", lOctal);
+            return retorna;
+        }
+        public string HexToBin(string num)
+        {
+            char[] cNum = num.ToCharArray();
+            //Array.Reverse(cNum);
+            List<string> lResult = new List<string>();
+
+            foreach (char c in cNum)
+            {
+                switch (c)
+                {
+                    case '0':
+                        lResult.Add("0000");
+                        break;
+                    case '1':
+                        lResult.Add("0001");
+                        break;
+                    case '2':
+                        lResult.Add("0010");
+                        break;
+                    case '3':
+                        lResult.Add("0011");
+                        break;
+                    case '4':
+                        lResult.Add("0100");
+                        break;
+                    case '5':
+                        lResult.Add("0101");
+                        break;
+                    case '6':
+                        lResult.Add("0110");
+                        break;
+                    case '7':
+                        lResult.Add("0111");
+                        break;
+                    case '8':
+                        lResult.Add("1000");
+                        break;
+                    case '9':
+                        lResult.Add("1001");
+                        break;
+                    case 'A':
+                        lResult.Add("1010");
+                        break;
+                    case 'B':
+                        lResult.Add("1011");
+                        break;
+                    case 'C':
+                        lResult.Add("1100");
+                        break;
+                    case 'D':
+                        lResult.Add("1101");
+                        break;
+                    case 'E':
+                        lResult.Add("1110");
+                        break;
+                    case 'F':
+                        lResult.Add("1111");
+                        break;
+                }
+            }
+
+
+            string result = String.Join("", lResult);
+            return result;
+        }
+        public string BinToHex(string num)
+        {
+            char[] cNum = num.ToCharArray();
+
+            if (cNum.Length % 4 != 0)
+            {
+                int addZero = 4 - (cNum.Length % 4);
+                char[] novoArray = new char[cNum.Length + addZero];
+
+                for (int i = 0; i < addZero; i++)
+                {
+                    novoArray[i] = '0';
+                }
+                //Copy => (origem, índice da origem, destino, índice do destino, nº a serem copiados
+                //Não sabia copiar array ':D
+                Array.Copy(cNum, 0, novoArray, addZero, cNum.Length);
+                //Fazer com que cNum ocupe o mesmo espaço na memória que o novoArray
+                cNum = novoArray;
+            }
+            List<string> lOctal = new List<string>();
+            List<string> lNumber = new List<string>();
+            //string[] sNumber = new string[3];
+            cNum.Reverse();
+
+            foreach (char c in cNum)
+            {
+                string unic = c.ToString();
+                lNumber.Add(unic);
+                if (lNumber.Count >= 4)
+                {
+                    //Caso dê erro de cálculo, usar Reverse antes do Join
+                    //lNumber.Reverse();
+                    string item = string.Join("", lNumber);
+                    string result = CheckHexa(item);
+                    lOctal.Add(result);
+                    lNumber.Clear();
+                }
+            }
+            if (lNumber.Count == 1)
+            {
+                lNumber[0] = "00" + lNumber[0];
+                string item = string.Join("", lNumber);
+                string result = CheckHexa(item);
+                lOctal.Add(result);
+                lNumber.Clear();
+            }
+            else if (lNumber.Count == 2)
+            {
+                lNumber[0] = "0" + lNumber[0];
+                string item = string.Join("", lNumber);
+                string result = CheckHexa(item);
                 lOctal.Add(result);
                 lNumber.Clear();
             }
@@ -215,6 +339,64 @@ namespace EasyConvert
 
             return retVal;
         }
-       
+        private string CheckHexa(string val)
+        {
+            string retVal = "";
+
+            switch (val)
+            {
+                case "0000":
+                    retVal = "0";
+                    break;
+                case "0001":
+                    retVal = "1";
+                    break;
+                case "0010":
+                    retVal = "2";
+                    break;
+                case "0011":
+                    retVal = "3";
+                    break;
+                case "0100":
+                    retVal = "4";
+                    break;
+                case "0101":
+                    retVal = "5";
+                    break;
+                case "0110":
+                    retVal = "6";
+                    break;
+                case "0111":
+                    retVal = "7";
+                    break;
+                case "1000":
+                    retVal = "8";
+                    break;
+                case "1001":
+                    retVal = "9";
+                    break;
+                case "1010":
+                    retVal = "A";
+                    break;
+                case "1011":
+                    retVal = "B";
+                    break;
+                case "1100":
+                    retVal = "C";
+                    break;
+                case "1101":
+                    retVal = "D";
+                    break;
+                case "1110":
+                    retVal = "E";
+                    break;
+                case "1111":
+                    retVal = "F";
+                    break;
+            }
+
+            return retVal;
+        }
+
     }
 }

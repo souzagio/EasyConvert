@@ -75,7 +75,7 @@ namespace EasyConvert.EasyConvert
             //string result = Med.DecToBin(Convert.ToInt32(txtValue.Text));
             //string result = Med.BinToDec(txtValue.Text);
             //string result = Med.OctaToBin(txtValue.Text);
-            string result = Med.BinToOcta(txtValue.Text);
+            string result = Med.BinToHex(txtValue.Text).ToUpper();
             txtResult.Text = result;
         }
 

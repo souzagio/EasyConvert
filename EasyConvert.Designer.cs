@@ -36,8 +36,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.lvlIn = new System.Windows.Forms.Label();
@@ -70,7 +68,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(158, 23);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "1ª ADS _ Conversor";
+            this.lblTitle.Text = "1º ADS _ Conversor";
             // 
             // txtValue
             // 
@@ -123,8 +121,6 @@
             this.panelMenu.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMenu.Controls.Add(this.button4);
-            this.panelMenu.Controls.Add(this.button3);
-            this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.btnLogin);
             this.panelMenu.Controls.Add(this.btnHome);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -140,7 +136,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(0, 280);
+            this.button4.Location = new System.Drawing.Point(0, 140);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(174, 70);
@@ -149,38 +145,6 @@
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(0, 210);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(174, 70);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "O outro do outro";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(0, 140);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(174, 70);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Outro Mano";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
@@ -314,8 +278,6 @@
         private ComboBox cmbIn;
         private Button button1;
         private Panel panelMenu;
-        private Button button3;
-        private Button button2;
         private Button btnLogin;
         private Button btnHome;
         private Button button4;
