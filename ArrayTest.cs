@@ -15,7 +15,7 @@ namespace EasyConvert
         public ArrayTest()
         {
             InitializeComponent();
-            cores = new List<string>{ "1","1","0","1"};
+            cores = new List<string>();
         }
         private List<string> cores;
         private void button1_Click(object sender, EventArgs e)
@@ -48,9 +48,9 @@ namespace EasyConvert
 
         private void button3_Click(object sender, EventArgs e)
         {
-            cores.RemoveAt(cores.Count - 1);
-            string item = string.Join("", cores);
-            textBox2.Text = item;
+            string texto = textBox1.Text;
+            texto.Reverse();
+            textBox2.Text = texto;
         }
     }
 }

@@ -72,7 +72,8 @@ namespace EasyConvert.EasyConvert
                 LimparTxt();
                 return;
             }
-            string result = Med.DecToBin(Convert.ToInt32(txtValue.Text));
+            //string result = Med.DecToBin(Convert.ToInt32(txtValue.Text));
+            string result = Med.BinToDec(txtValue.Text);
             txtResult.Text = result;
         }
 

@@ -40,5 +40,26 @@ namespace EasyConvert
             string returnNumber = string.Join("", result);
             return returnNumber;
         }
+        public string BinToDec(string num)
+        {
+            int iexpo, iContador = 0, iresult = 0;
+            num.Reverse();
+            char[] cNum = num.ToCharArray();
+            Array.Reverse(cNum);
+
+            foreach (char c in cNum)
+            {
+                if (c == '1')
+                {
+                    //Isso daqui eu não sabia, pensei que podia usar "^" e descobri que não.
+                    iexpo = (int)Math.Pow(2, iContador);
+                    iresult += iexpo;
+                }
+                iContador++;
+            }
+
+            string result = iresult.ToString();
+            return result;
+        }
     }
 }
