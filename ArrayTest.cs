@@ -52,5 +52,13 @@ namespace EasyConvert
             texto.Reverse();
             textBox2.Text = texto;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string[] test = new string[7];
+            test[0] = textBox1.Text;
+            int n = test.Length % 3;
+            textBox2.Text = n.ToString();
+        }
     }
 }

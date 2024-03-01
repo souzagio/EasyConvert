@@ -66,11 +66,11 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitle.Location = new System.Drawing.Point(179, 26);
+            this.lblTitle.Location = new System.Drawing.Point(242, 28);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(223, 23);
+            this.lblTitle.Size = new System.Drawing.Size(158, 23);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Bin, Dec, Oct, Hex Conversor";
+            this.lblTitle.Text = "1ª ADS _ Conversor";
             // 
             // txtValue
             // 
