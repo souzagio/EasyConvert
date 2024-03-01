@@ -15,7 +15,7 @@ namespace EasyConvert
         public ArrayTest()
         {
             InitializeComponent();
-            cores = new List<string>() { "Azul", "Preto", "Amarelo" };
+            cores = new List<string>{ "1","1","0","1"};
         }
         private List<string> cores;
         private void button1_Click(object sender, EventArgs e)
@@ -37,6 +37,20 @@ namespace EasyConvert
             }
             textBox1.Clear();
             textBox1.Focus();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Intermed med = new Intermed();
+            string resultado = med.DecToBin(Convert.ToInt32(textBox1.Text)).ToString();
+            textBox2.Text = resultado;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cores.RemoveAt(cores.Count - 1);
+            string item = string.Join("", cores);
+            textBox2.Text = item;
         }
     }
 }

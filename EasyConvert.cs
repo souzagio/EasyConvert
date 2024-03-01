@@ -19,7 +19,7 @@ namespace EasyConvert.EasyConvert
         //Variáveis para controle do form
         bool MouseDwn;
         Point lastPt;
-        ConvertClass CnClass = new ConvertClass();
+        Intermed Med = new Intermed();
         private void EasyConvert_MouseDown(object sender, MouseEventArgs e)
         {
             MouseDwn = true;
@@ -66,35 +66,27 @@ namespace EasyConvert.EasyConvert
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sIn = cmbIn.Text;
-            string sOut = cmbOut.Text;
-            int iEntrada = 0;
-            if ((sIn == null) || (sOut == null))
+            if(txtValue.Text == "")
             {
-                MessageBox.Show("Por favor, selecione um\n valor para converter(entrada) e um valor para saída.");
+                MessageBox.Show("Por favor, insira um valor válido\n contido na base de entrada.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LimparTxt();
+                return;
             }
-            else if (txtValue.Text == "")
-            {
-                MessageBox.Show("Por favor, insira um valor de entrada.");
-                txtValue.Focus();
-            }
-            else
-                try
-                {
-                    iEntrada = Convert.ToInt32(txtValue.Text);
-
-                }
-                catch
-                {
-                    MessageBox.Show("Insira somente números compatíveis com\na base de entrada selecionada.");
-                    txtValue.Focus();
-                }
+            string result = Med.DecToBin(Convert.ToInt32(txtValue.Text));
+            txtResult.Text = result;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             ArrayTest frm = new ArrayTest();
             frm.Show();
+        }
+
+        //Métodos
+        void LimparTxt()
+        {
+            txtValue.Clear();
+            txtValue.Focus();
         }
     }
 }
