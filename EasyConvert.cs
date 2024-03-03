@@ -126,8 +126,8 @@ namespace EasyConvert.EasyConvert
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            ArrayTest frm = new ArrayTest();
-            frm.Show();
+            //ArrayTest frm = new ArrayTest();
+            //frm.Show();
         }
 
         //Métodos
