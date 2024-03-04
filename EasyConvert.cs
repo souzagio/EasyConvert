@@ -77,6 +77,11 @@ namespace EasyConvert.EasyConvert
 
             string input = cmbIn.Text;
             string output = cmbOut.Text;
+            if(input == output)
+            {
+                MessageBox.Show("Escolha tipos diferentes para entrada e saída.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
             //Check In
             switch(input)
             {
@@ -84,7 +89,7 @@ namespace EasyConvert.EasyConvert
                     result = Med.DecToBin(Convert.ToInt16(txtValue.Text));
                     break;
                 case "Binário":
-                    result = Med.BinToDec(txtValue.Text).ToUpper();
+                    result = txtValue.Text;
                     break;
                 case "Octal":
                     result = Med.OctaToBin(txtValue.Text).ToUpper();
@@ -102,18 +107,18 @@ namespace EasyConvert.EasyConvert
             switch (output)
             {
                 case "Decimal":
-                    result = Med.BinToDec(txtValue.Text);
+                    result = Med.BinToDec(result);
                     txtResult.Text = result;
                     break;
                 case "Binário":
                     txtResult.Text = result;
                     break;
                 case "Octal":
-                    result = Med.BinToOcta(txtValue.Text).ToUpper();
+                    result = Med.BinToOcta(result).ToUpper();
                     txtResult.Text = result;
                     break;
                 case "HexDecimal":
-                    result = Med.BinToHex(txtValue.Text).ToUpper();
+                    result = Med.BinToHex(result).ToUpper();
                     txtResult.Text = result;
                     break;
                 default:
